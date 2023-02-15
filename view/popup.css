@@ -1,59 +1,86 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 body {
-    width: 365px;
-    height: 350px;
-    background-color: #202123;
+  width: 365px;
+  height: 350px;
+  background-color: #202123;
 }
 
 header {
-    height: 10%;
-    color: #42bb9b;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+header h1 {
+  color: #42bb9b;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+header aside {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header aside svg {
+  color: #42bb9b;
+  width: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+header aside svg:hover {
+    background-color: rgba(255, 255, 255, 0.068);
 }
 
 main {
-    border-top: 1px solid #4d4d4f;
-    background-color: #343541;
-    height: 90%;
+  border-top: 1px solid #4d4d4f;
+  background-color: #343541;
+  height: 90%;
 }
 
-.current-folder{
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.current-folder {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .folder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: rgb(204, 204, 204);
-    padding: 10px;
-    width: 86px;
-    cursor: pointer;
-    border: 1px solid rgba(211, 211, 211, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(204, 204, 204);
+  padding: 10px;
+  width: 86px;
+  cursor: pointer;
+  border: 1px solid rgba(211, 211, 211, 0);
 }
 
 .folder:hover {
-    background-color: rgba(0, 0, 0, 0.068);
-    border: 1px solid rgba(0, 0, 0, 0.151);
+  background-color: rgba(0, 0, 0, 0.068);
+  border: 1px solid rgba(0, 0, 0, 0.151);
 }
 
 .folder p {
-    text-align: center;
-    word-wrap: break-word;
-    width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  width: 100%;
 }
 
-.folder-img{
-    width: 40px;
-    padding-bottom: 5px;
+.folder-img {
+  width: 40px;
+  padding-bottom: 5px;
 }

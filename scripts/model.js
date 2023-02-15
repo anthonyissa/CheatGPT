@@ -1,8 +1,14 @@
 export class Folder {
-    constructor(name, files, folders){
+    
+    constructor(name, files, folders = []){
         this.name = name;
         this.files = files;
         this.folders = folders;
+        this.parent = null;
+    }
+
+    setParent(parent){
+        this.parent = parent;
     }
 
     addFile(file){

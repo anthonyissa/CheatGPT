@@ -10,6 +10,7 @@ body {
   width: 365px;
   height: 350px;
   background-color: #202123;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -49,7 +50,30 @@ main {
   border-top: 1px solid #4d4d4f;
   background-color: #343541;
   height: 90%;
+  overflow-y: scroll;
 }
+
+main::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #343541;
+}
+
+main::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+main::-webkit-scrollbar-thumb
+{
+	background-color: #42bb9b;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
+
 
 .current-folder {
   padding: 20px;

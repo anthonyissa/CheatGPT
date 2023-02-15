@@ -33,5 +33,9 @@ export const createFolderNode = (folder, image, callback) => {
   folderNode.addEventListener("dblclick", () => {
     callback(folder);
   });
+  folderNode.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+    console.log("right click")
+  });
   return folderNode;
 };

@@ -1,9 +1,10 @@
+let folderId = 0;
+let fileId = 0;
 export class Folder {
 
-    static id = 0;
 
   constructor(name, files, folders = []) {
-    this.id = Folder.id++;
+    this.id = folderId++;
     this.name = name;
     this.files = files;
     this.folders = folders;
@@ -13,10 +14,9 @@ export class Folder {
 
 export class File {
 
-  static id = 0;
 
   constructor(name, url = "https://chat.openai.com/") {
-    this.id = File.id++;
+    this.id = fileId++;
     this.name = name;
     this.url = url;
   }

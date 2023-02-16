@@ -25,3 +25,13 @@ export const openPrompt = (doc, filetype) => {
   if (newName == "" || regex.onlyWhitespaces.test(newName)) doc.name = oldName;
   else doc.name = newName.substring(0, 20);
 };
+
+export const updatePath = (folder, root) => {
+    let path = "";
+    let currentFolder = folder;
+    while (currentFolder.parentId !== -1) {
+        path = `/${currentFolder.name}${path}`;
+        currentFolder = getFolderByIdFromRoot(currentFolder.parentId, root);
+    }
+    document.getElementById("path").innerHTML = path.length != 0 ? path : "/";
+}

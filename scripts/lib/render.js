@@ -1,7 +1,9 @@
+import { updatePath } from "../utils/modelUtils.js";
 import { resetCurrentFolder } from "../utils/nodeUtils.js";
 import { createFileNode, createFolderNode, createImageNode } from "./genericNodes.js";
 
-export const render = (currentFolder, updateFolder) => {
+export const render = (currentFolder, updateFolder, root) => {
+    updatePath(currentFolder, root);
     resetCurrentFolder();
     if(currentFolder.folders.length !== 0){
         currentFolder.folders.forEach((folder) => {

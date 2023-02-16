@@ -17,7 +17,7 @@ const updateFolder = (folder = null) => {
   initNavigationMenu(currentFolder, updateFolder, root);
   if(currentFolder) saveData(root, currentFolder.id);
   document.getElementById("context-menu").style.scale = 0;
-  render(currentFolder, updateFolder);
+  render(currentFolder, updateFolder, root);
 };
 
 if (localStorage.getItem("root")) {

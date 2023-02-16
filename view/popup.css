@@ -77,7 +77,7 @@ main::-webkit-scrollbar-thumb {
 }
 
 .current-folder {
-  padding: 20px;
+  padding: 0 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -167,4 +167,12 @@ main::-webkit-scrollbar-thumb {
   background: none;
   border-radius: 5px;
   color: #6b6b6d;
+}
+
+#path {
+  color: #42bb9b;
+  margin: 5px 10px;
+  padding: 5px 10px;
+  background: #0000002b;
+  border-radius: 4px;
 }

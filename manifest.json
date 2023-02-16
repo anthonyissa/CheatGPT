@@ -3,6 +3,12 @@
   "name": "FilesGPT",
   "version": "1.0",
   "description": "Manage your chatGPT discussions.",
+  "icons": {
+    "16": "./img/folder.png",
+    "32": "./img/folder.png",
+    "48": "./img/folder.png",
+    "128": "./img/folder.png"
+  },
   "action": {
     "default_popup": "./view/popup.html",
     "default_title": "FilesGPT"

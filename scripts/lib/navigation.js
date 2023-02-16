@@ -12,14 +12,13 @@ export const initNavigationMenu = (currentFolder, updateFolder, root) => {
         updateFolder(getFolderByIdFromRoot(currentFolder.parentId, root));
     };
     newFileBtn.onclick = () => {
-        addFile(currentFolder, new File("new file", "https://www.google.com"));
+        addFile(currentFolder, new File("New File"));
         updateFolder(currentFolder)
     };
     newFolderBtn.onclick = () => {
-        const newFolder = new Folder("new folder", [], []);
+        const newFolder = new Folder("New Folder", [], []);
         addFolder(currentFolder, newFolder);
         setParent(newFolder, currentFolder.id)
-        console.log(newFolder)
         updateFolder(currentFolder)
     };
 } 

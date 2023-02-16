@@ -7,7 +7,7 @@ export const render = (currentFolder, updateFolder) => {
         currentFolder.folders.forEach((folder) => {
             document
               .getElementsByClassName("current-folder")[0]
-              .appendChild(createFolderNode(folder, createImageNode("../img/folder.png", "folder-img"), updateFolder));
+              .appendChild(createFolderNode(currentFolder, folder, createImageNode("../img/folder.png", "folder-img"), updateFolder));
           });
     }
     if(currentFolder.files.length !== 0)
@@ -15,7 +15,7 @@ export const render = (currentFolder, updateFolder) => {
         currentFolder.files.forEach((file) => {
           document
             .getElementsByClassName("current-folder")[0]
-            .appendChild(createFileNode(file, createImageNode("../img/document.png", "folder-img")));
+            .appendChild(createFileNode(currentFolder, file, createImageNode("../img/document.png", "folder-img"), updateFolder));
         });
     }
 }

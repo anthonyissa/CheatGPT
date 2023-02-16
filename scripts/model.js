@@ -12,7 +12,11 @@ export class Folder {
 }
 
 export class File {
-  constructor(name, url) {
+
+  static id = 0;
+
+  constructor(name, url = "https://chat.openai.com/") {
+    this.id = File.id++;
     this.name = name;
     this.url = url;
   }

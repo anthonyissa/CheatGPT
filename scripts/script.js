@@ -3,20 +3,10 @@ import { initNavigationMenu } from "./lib/navigation.js";
 import { render } from "./lib/render.js";
 
 const file = new File(
-  "Js test",
-  "https://chat.openai.com/chat/7e27c254-4be4-493d-a64f-fefbbd3ac89e"
+  "New File"
 );
 
 let root, folder, currentFolder;
-
-// if(localStorage.getItem("root")){
-//     root = JSON.parse(localStorage.getItem("root"));
-//     console.log(root)
-// } else {
-//     folder = new Folder("folder", [], []);
-//     root = new Folder("root", [file], [folder]);
-//     // folder.setParent(root);
-// }
 
 folder = new Folder("folder", [], []);
 root = new Folder("root", [file], [folder]);
@@ -26,11 +16,11 @@ if(localStorage.getItem("root")){
     root = JSON.parse(localStorage.getItem("root"));
 }
 
-const updateFolder = (folder) => {
-    currentFolder = folder;
+const updateFolder = (folder = null) => {
+    if(folder) currentFolder = folder;
     initNavigationMenu(currentFolder, updateFolder, root);
     localStorage.setItem("root", JSON.stringify(root));
-
+    document.getElementById("context-menu").style.scale = 0
     render(currentFolder, updateFolder);
 }
 

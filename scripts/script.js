@@ -1,14 +1,12 @@
-import { Folder, File, setParent } from "./model.js";
+import { Folder } from "./model.js";
 import { initNavigationMenu } from "./lib/navigation.js";
 import { render } from "./lib/render.js";
 import { getData, saveData } from "./lib/save.js";
 import { getFolderByIdFromRoot } from "./utils/modelUtils.js";
 import { getViewType, initViewMenu, setViewType } from "./lib/view.js";
 
-const file = new File("New File");
 
 let root,
-  folder,
   currentFolder, 
   viewType;
 

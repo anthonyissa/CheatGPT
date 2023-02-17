@@ -122,7 +122,7 @@ main::-webkit-scrollbar-thumb {
 }
 
 .current-folder-row {
-  grid-template-rowumns: 1fr;
+  grid-template-columns: 1fr;
 }
 .current-folder-row .folder{
   flex-direction: row;
@@ -216,12 +216,17 @@ main::-webkit-scrollbar-thumb {
 }
 
 #view-icons svg {
- width: 18px;
+ width: 20px;
 }
 
 #grid-btn {
   display: none;
 }
+
+/* #tab-icons {
+  display: flex;
+  align-items: center;
+} */
 
 @-moz-document url-prefix() {
   * {

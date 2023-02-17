@@ -13,7 +13,7 @@ export const initNavigationMenu = (currentFolder, updateFolder, root) => {
         updateFolder(getFolderByIdFromRoot(currentFolder.parentId, root));
     };
     newFileBtn.onclick = () => {
-        const newFile = new File("New File");
+        const newFile = new File("New Chat");
         openPrompt(newFile, fileType.FILE)
         addFile(currentFolder, newFile);
         updateFolder(currentFolder)

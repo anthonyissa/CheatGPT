@@ -14,7 +14,7 @@
 
 body {
   width: 365px;
-  height: 350px;
+  height: 400px;
   background-color: #202123;
   scroll-behavior: smooth;
 }
@@ -52,11 +52,54 @@ header aside svg:hover {
   background-color: rgba(255, 255, 255, 0.068);
 }
 
+#window {
+  height: 90%;
+  display: flex;
+}
+
+#sidebar {
+  border-top: 1px solid #4d4d4f;
+  background-color: #2c2c36;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  z-index: 1;
+  padding: 5px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#sidebar .active {
+  background-color: #42bb9b86;
+  color: white;
+}
+#sidebar .active:hover {
+  background-color: #42bb9b86;
+}
+
+#sidebar svg {
+  color: #42bb9b;
+  width: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+#sidebar svg:hover {
+  background-color: rgba(255, 255, 255, 0.068);
+}
+
+#folder-tab {
+  display: none;
+}
+
 main {
   border-top: 1px solid #4d4d4f;
   background-color: #343541;
-  height: 90%;
   overflow-y: scroll;
+  height: 100%;
+  width: 90%;
 }
 
 main::-webkit-scrollbar-track {
@@ -227,6 +270,54 @@ main::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
 } */
+
+#prompt-tab form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+#prompt-tab form h1{
+  color: #42bb9b;
+  text-shadow: 0 0 10px #00000022;
+  margin-bottom: 20px;
+}
+
+#prompt-tab input, #prompt-tab textarea {
+  outline: none;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #2c2c36;
+  color: white;
+  width: 70%;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.089);
+  max-width: 70%;
+  min-width: 70%;
+}
+
+textarea {
+  height: 70px;
+  min-height: 20%;
+}
+
+#prompt-tab input[type="submit"] {
+  background-color: #42bb9ba7;
+  cursor: pointer;
+  transition: 0.2s;
+  width: auto;
+  padding: 10px 20px;
+}
+
+#prompt-tab input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
 
 @-moz-document url-prefix() {
   * {

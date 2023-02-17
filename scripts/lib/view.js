@@ -34,5 +34,5 @@ export const setViewType = (type) => {
     viewType = type;
     if(type === "grid") diplayGrid();
     else displayList();
-    saveData(null, null, viewType);
+    saveData(null, null, viewType, null);
 } 

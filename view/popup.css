@@ -1,9 +1,15 @@
+@font-face {
+  font-family: 'roboto'; /* Name your custom font */
+  src: url('../Roboto-Regular.ttf') format('truetype'); /* Define the font file and its format */
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  font-family: roboto, sans-serif;
 }
 
 body {
@@ -23,7 +29,7 @@ header {
 
 header h1 {
   color: #42bb9b;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -215,4 +221,13 @@ main::-webkit-scrollbar-thumb {
 
 #grid-btn {
   display: none;
+}
+
+@-moz-document url-prefix() {
+  * {
+    font-size: 0.9rem;
+  }
+  .folder p {
+    font-size: 0.85rem;
+  } 
 }

@@ -81,7 +81,6 @@ main::-webkit-scrollbar-thumb {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-
 .folder {
   display: flex;
   flex-direction: column;
@@ -114,6 +113,30 @@ main::-webkit-scrollbar-thumb {
 .folder-img {
   width: 40px;
   padding-bottom: 5px;
+}
+
+.current-folder-col {
+  grid-template-columns: 1fr;
+}
+.current-folder-col .folder{
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 90%;
+  max-width: none;
+  height: 10px;
+}
+.current-folder-col .folder img{
+  width: 20px;
+  margin: 0;
+  padding: 0;
+}
+.current-folder-col .folder p{
+  height: auto;
+  text-align: left;
+  margin-left: 10px;
+  max-width: none;
+  width: 100%;
 }
 
 #context-menu {
@@ -169,7 +192,7 @@ main::-webkit-scrollbar-thumb {
   color: #6b6b6d;
 }
 
-#path {
+#path-container {
   color: #42bb9b;
   margin: 5px 10px;
   padding: 5px 10px;

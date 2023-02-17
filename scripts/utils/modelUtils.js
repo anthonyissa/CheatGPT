@@ -33,5 +33,7 @@ export const updatePath = (folder, root) => {
         path = `/${currentFolder.name}${path}`;
         currentFolder = getFolderByIdFromRoot(currentFolder.parentId, root);
     }
-    document.getElementById("path").innerHTML = path.length != 0 ? path : "/";
+    if(path.length >= 50) path = "..."+path.substring(path.length-50, path.length) ;
+    else if(path.length === 0) path = "/";
+    document.getElementById("path").innerHTML = path;
 }

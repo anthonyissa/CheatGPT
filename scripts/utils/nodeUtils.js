@@ -1,3 +1,3 @@
 export const resetCurrentFolder = () => {
-    document.getElementsByClassName("current-folder")[0].innerHTML = "";
+    document.getElementById("current-folder").innerHTML = "";
 }

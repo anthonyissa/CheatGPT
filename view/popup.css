@@ -115,23 +115,24 @@ main::-webkit-scrollbar-thumb {
   padding-bottom: 5px;
 }
 
-.current-folder-col {
-  grid-template-columns: 1fr;
+.current-folder-row {
+  grid-template-rowumns: 1fr;
 }
-.current-folder-col .folder{
+.current-folder-row .folder{
   flex-direction: row;
   align-items: center;
   justify-content: start;
   width: 90%;
   max-width: none;
   height: 10px;
+  margin: auto;
 }
-.current-folder-col .folder img{
+.current-folder-row .folder img{
   width: 20px;
   margin: 0;
   padding: 0;
 }
-.current-folder-col .folder p{
+.current-folder-row .folder p{
   height: auto;
   text-align: left;
   margin-left: 10px;
@@ -198,4 +199,20 @@ main::-webkit-scrollbar-thumb {
   padding: 5px 10px;
   background: #0000002b;
   border-radius: 4px;
+}
+
+#view-icons{
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 1px solid #4d4d4f;
+  display: flex;
+  align-items: center;
+}
+
+#view-icons svg {
+ width: 18px;
+}
+
+#grid-btn {
+  display: none;
 }

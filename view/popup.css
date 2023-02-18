@@ -12,11 +12,16 @@
   font-family: roboto, sans-serif;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   width: 365px;
   height: 400px;
   background-color: #202123;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 header {
@@ -25,6 +30,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  border-bottom: 1px solid #4d4d4f;
 }
 
 header h1 {
@@ -58,7 +64,6 @@ header aside svg:hover {
 }
 
 #sidebar {
-  border-top: 1px solid #4d4d4f;
   background-color: #2c2c36;
   width: 10%;
   display: flex;
@@ -66,7 +71,7 @@ header aside svg:hover {
   flex-direction: column;
   justify-content: start;
   z-index: 1;
-  padding: 5px 0;
+  padding: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #sidebar .active {
@@ -90,16 +95,11 @@ header aside svg:hover {
   background-color: rgba(255, 255, 255, 0.068);
 }
 
-#folder-tab {
-  display: none;
-}
-
 main {
-  border-top: 1px solid #4d4d4f;
   background-color: #343541;
   overflow-y: scroll;
   height: 100%;
-  width: 90%;
+  width: 100%;
 }
 
 main::-webkit-scrollbar-track {
@@ -129,6 +129,14 @@ main::-webkit-scrollbar-thumb {
   padding: 0 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#folder-tab {
+  display: block;
+  position: absolute;
+  top: 10.2%;
+  width: 89%;
+  height: 90%;
 }
 .folder {
   display: flex;
@@ -271,6 +279,11 @@ main::-webkit-scrollbar-thumb {
   align-items: center;
 } */
 
+#prompt-tab {
+  padding: 5px 0;
+  overflow: hidden;
+}
+
 #prompt-tab form {
   display: flex;
   align-items: center;
@@ -298,12 +311,13 @@ main::-webkit-scrollbar-thumb {
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.089);
   max-width: 70%;
-  min-width: 70%;
+  
 }
 
 textarea {
   height: 70px;
   min-height: 20%;
+  resize: vertical;
 }
 
 #prompt-tab input[type="submit"] {
@@ -318,7 +332,9 @@ textarea {
   opacity: 0.8;
 }
 
-
+.move {
+  transform: translateY(100%);
+}
 @-moz-document url-prefix() {
   * {
     font-size: 0.9rem;
@@ -326,9 +342,6 @@ textarea {
   .folder p {
     font-size: 0.85rem;
   } 
-  body {
-    overflow: hidden;
-  }
   #prompt-tab form h1{
     font-size: 1.5rem;
   }

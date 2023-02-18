@@ -58,8 +58,8 @@ const handleContextMenu = (event, parent, doc, filetype, callback) => {
   menu.style.scale = 1;
   if(filetype === fileType.FILE) linkBtn.style.display = "block";
   else linkBtn.style.display = "none";
-  menu.style.top = (mouseY - 30) + "px";
-  menu.style.left = mouseX + "px";
+  menu.style.top = (mouseY - 70) + "px";
+  menu.style.left = (mouseX - 40) + "px";
   linkBtn.onclick = () => {
     const oldLink = doc.url;
     let newLink = prompt("Enter new chatGPT link", doc.url);

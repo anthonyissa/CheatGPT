@@ -16,6 +16,11 @@ export const initSideNav = (tab) => {
     promptTabBtn.onclick = () => {
         changeTab("prompt");
     };
+    setTimeout(() => {
+        for(let i = 0; i < document.getElementsByTagName("main").length; i++) {
+            document.getElementsByTagName("main")[i].style.transition = "all 0.2s ease-in-out";
+        }
+    }, 100);
 }
 
 export const changeTab = (tab) => {
@@ -23,14 +28,20 @@ export const changeTab = (tab) => {
     else currentTab = tab;
     if(tab === "folder") {
         folderTab.style.display = "block";
-        promptTab.style.display = "none";
+        // promptTab.style.display = "none";
+        promptTab.classList.add("move")
+        folderTab.classList.remove("move")
+
         folderTabBtn.classList.add("active");
         promptTabBtn.classList.remove("active");
         asideFolderTab.style.display = "flex";
     }
     else if(tab === "prompt") {
-        folderTab.style.display = "none";
+        // folderTab.style.display = "none";
         promptTab.style.display = "block";
+        folderTab.classList.add("move")
+        promptTab.classList.remove("move")
+
         folderTabBtn.classList.remove("active");
         promptTabBtn.classList.add("active");
         asideFolderTab.style.display = "none";

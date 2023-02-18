@@ -11,25 +11,28 @@ import { getCurrentTab, initSideNav, setCurrentTab } from "./lib/sideNav.js";
 let root,
   currentFolder, 
   viewType,
-  currentTab;
+  currentTab,
+  firstRender = true;
 
 root = new Folder("root", [], []);
 
 const updateFolder = (folder = null) => {
   if (folder) currentFolder = folder;
+  if(firstRender){
+    initSideNav(currentTab);
+    initPromptForm();
+    initViewMenu();
+  }
   initNavigationMenu(currentFolder, updateFolder, root);
-  initSideNav(currentTab);
-  initPromptForm();
-  initViewMenu();
   if(currentFolder) saveData(root, currentFolder.id, getViewType(), getCurrentTab());
   document.getElementById("context-menu").style.scale = 0;
   render(currentFolder, updateFolder, root);
+  firstRender = false;
 };
 
 if (localStorage.getItem("root")) {
   let currentFolderId;
   [root, currentFolderId, viewType, currentTab] = getData();
-  console.log(currentTab)
   setCurrentTab(currentTab)
   setViewType(viewType);
   currentFolder = getFolderByIdFromRoot(currentFolderId, root);

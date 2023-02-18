@@ -326,4 +326,10 @@ textarea {
   .folder p {
     font-size: 0.85rem;
   } 
+  body {
+    overflow: hidden;
+  }
+  #prompt-tab form h1{
+    font-size: 1.5rem;
+  }
 }

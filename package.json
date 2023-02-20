@@ -1,7 +1,7 @@
 {
-  "name": "my-webpack-project",
+  "name": "CheatGPT",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "Chat GPT extension",
   "main": "/src/scripts/background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MadderStone/FilesGPT.git"
+    "url": "git+https://github.com/MadderStone/CheatGPT.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MadderStone/FilesGPT/issues"
+    "url": "https://github.com/MadderStone/CheatGPT/issues"
   },
-  "homepage": "https://github.com/MadderStone/FilesGPT#readme",
+  "homepage": "https://github.com/MadderStone/CheatGPT#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",

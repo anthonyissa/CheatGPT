@@ -12,6 +12,12 @@
   "action": {
     "default_popup": "./view/popup.html",
     "default_title": "CheatGPT"
-  }
-
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["./dist/main.js"],
+      "persistent": true
+    }
+  ]
 }

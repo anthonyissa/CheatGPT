@@ -1,46 +1,62 @@
-export const initChat = () => {
+import { callOpenAi } from "../services/api";
+import { createInputElement } from "./input";
+import { createLoadingElement } from "./loading";
+import { createResponseElement } from "./response";
+
+let responseHistory = [];
+let promptHistory = [];
+let historyCursor = 0;
+
+const createChatElement = () => {
   const div = document.createElement("div");
-  const response = document.createElement("p");
-  const input = document.createElement("textarea");
-  div.className = "chat-xaxaxixi hidden";
-  response.id = "response";
+  div.className = "chat-0x4874578 hidden";
+  return div;
+};
+
+export const initChat = () => {
+  const div = createChatElement();
+  const response = createResponseElement();
+  const input = createInputElement();
+  const loading = createLoadingElement();
+  
+  div.appendChild(loading);
   div.appendChild(response);
   div.appendChild(input);
+  
   document.body.appendChild(div);
+  
+  listenToKeyEvents(input);
+  return div;
+};
+
+export const addToHistories = (response, prompt) => {
+  responseHistory.push(response);
+  promptHistory.push(prompt);
+  historyCursor++;
+}
+
+export const navigateHistory = (event) => {
+  const input = document.querySelector(".chat-0x4874578 textarea");
+  const response = document.querySelector(".chat-0x4874578 #response");
+  if (event.ctrlKey && event.key === "ArrowUp") {
+    if(historyCursor === promptHistory.length) return;
+    historyCursor++;
+  }
+  else if (event.ctrlKey && event.key === "ArrowDown") {
+    if(historyCursor === 1) return;
+    historyCursor--;
+  }
+  input.value = promptHistory[historyCursor-1];
+  response.innerHTML = responseHistory[historyCursor-1];
+}
+
+const listenToKeyEvents = (input) => {
   input.addEventListener("keydown", async function (event) {
     if (event.ctrlKey && event.key === "Enter") {
       await callOpenAi(input.value);
     }
+    if (event.ctrlKey && (event.key === "ArrowUp" || event.key === "ArrowDown")) {
+      navigateHistory(event);
+    }
   });
-  return div;
-};
-
-const callOpenAi = async (prompt) => {
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", "Bearer sk-");
-    
-    var raw = JSON.stringify({
-      "model": "gpt-3.5-turbo",
-      "messages": [
-        {
-          "role": "user",
-          "content": prompt
-        }
-      ]
-    });
-    
-    var requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-    
-    const rawResults = await fetch("https://api.openai.com/v1/chat/completions", requestOptions);
-    const textResults = await rawResults.text();
-    const jsonResults = JSON.parse(textResults);
-    const messageWithLineBreaks = jsonResults.choices[0].message.content.replace(/\n/g, '<br>')
-    document.getElementById("response").innerHTML = messageWithLineBreaks;
-};
-
+}

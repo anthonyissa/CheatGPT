@@ -12,21 +12,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MadderStone/CheatGPT.git"
+    "url": "git+https://github.com/anthonyissa/CheatGPT.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MadderStone/CheatGPT/issues"
+    "url": "https://github.com/anthonyissa/CheatGPT/issues"
   },
-  "homepage": "https://github.com/MadderStone/CheatGPT#readme",
+  "homepage": "https://github.com/anthonyissa/CheatGPT#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@webpack-cli/generators": "^3.0.1",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
+    "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.8.0",
     "style-loader": "^3.3.1",

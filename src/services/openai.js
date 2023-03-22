@@ -1,11 +1,11 @@
 import { addToHistories } from "../components/chat";
-import { toggleLoading } from "../utils";
+import { toggleLoading } from "../components/loading";
 
 let isLoading = false;
 
 export const callOpenAi = async (prompt) => {
   const responseElement = document.getElementById("response");
-  if (isLoading) return;
+  if (isLoading || prompt.trim().length === 0) return;
   try{
     waitBeforeNextCall();
     toggleLoading(true);

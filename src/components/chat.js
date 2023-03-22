@@ -1,4 +1,5 @@
-import { callOpenAi } from "../services/api";
+import { callOpenAi } from "../services/openai";
+import { createInfoElement } from "./info";
 import { createInputElement } from "./input";
 import { createLoadingElement } from "./loading";
 import { createResponseElement } from "./response";
@@ -18,10 +19,12 @@ export const initChat = () => {
   const response = createResponseElement();
   const input = createInputElement();
   const loading = createLoadingElement();
+  const info = createInfoElement();
   
   div.appendChild(loading);
   div.appendChild(response);
   div.appendChild(input);
+  div.appendChild(info);
   
   document.body.appendChild(div);
   

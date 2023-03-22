@@ -6,3 +6,14 @@ export const createLoadingElement = () => {
   loading.innerHTML = loadingSVG;
   return loading;
 };
+
+export const toggleLoading = (bool) => {
+    const loadingElement = document.getElementsByClassName("loading")[0];
+    if (bool) {
+      loadingElement.classList.remove("hidden");
+    }
+    else {
+      loadingElement.classList.add("hidden");
+    }
+  };
+  

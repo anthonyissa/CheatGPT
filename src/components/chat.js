@@ -1,11 +1,14 @@
 export const initChat = () => {
   const div = document.createElement("div");
-  const input = document.createElement("input");
-  div.className = "chat hidden";
+  const response = document.createElement("p");
+  const input = document.createElement("textarea");
+  div.className = "chat-xaxaxixi hidden";
+  response.id = "response";
+  div.appendChild(response);
   div.appendChild(input);
   document.body.appendChild(div);
   input.addEventListener("keydown", async function (event) {
-    if (event.key === "Enter") {
+    if (event.ctrlKey && event.key === "Enter") {
       await callOpenAi(input.value);
     }
   });
@@ -34,9 +37,10 @@ const callOpenAi = async (prompt) => {
       redirect: 'follow'
     };
     
-    fetch("https://api.openai.com/v1/chat/completions", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    const rawResults = await fetch("https://api.openai.com/v1/chat/completions", requestOptions);
+    const textResults = await rawResults.text();
+    const jsonResults = JSON.parse(textResults);
+    const messageWithLineBreaks = jsonResults.choices[0].message.content.replace(/\n/g, '<br>')
+    document.getElementById("response").innerHTML = messageWithLineBreaks;
 };
 

@@ -15,7 +15,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://chat.openai.com/*"],
+      "matches": ["https://*/*", "https://*/*"],
       "js": ["./dist/main.js"],
       "css": ["./view/background.css"],
       "persistent": true

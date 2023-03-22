@@ -1,0 +1,13 @@
+@echo off
+
+if exist .env (
+    echo .env file found, continuing...
+    echo Installing npm...
+    choco install nodejs-lts -y
+    echo Installing project dependencies...
+    npm install
+    echo Building the app...
+    npm run build
+) else (
+    echo ERROR : .env file not found, please create one using the .env.example file as a template and try again.
+)

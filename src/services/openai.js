@@ -14,11 +14,14 @@ export const callOpenAi = async (prompt) => {
     const response = await sendOpenAiRequest(prompt);
 
     responseElement.innerHTML = response;
-    responseElement.classList.remove("hidden");
+    responseElement.style.color = "white";
     addToHistories(response, prompt);
   } catch( error ){
+    responseElement.innerHTML = error;
+    responseElement.style.color = "red";
     console.error({errorCallOpenAi: error});
   } finally {
+    responseElement.classList.remove("hidden");
     toggleLoading(false);
   }
 };
@@ -53,6 +56,18 @@ const sendOpenAiRequest = async (prompt) => {
   };
 
   const rawResults = await fetch("https://api.openai.com/v1/chat/completions", requestOptions);
+  if(!rawResults.ok){
+    console.error(rawResults);
+    if(rawResults.status === 401) {
+      throw new Error("Make sure the API key is correct in the .env file.");
+    } else if(rawResults.status === 429) {
+      throw new Error("You have reached the maximum number of requests per day.");
+    } else if(rawResults.status === 500 || rawResults.status === 502) {
+      throw new Error("The server is currently unavailable.");
+    } else {
+      throw new Error("An error occurred.");
+    }
+  }
   const textResults = await rawResults.text();
   const jsonResults = JSON.parse(textResults); 
   return jsonResults.choices[0].message.content.replace(/\n/g, '<br>').replace("  ", "&emsp;"); 

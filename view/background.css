@@ -38,7 +38,7 @@
   font-size: 12px;
   width: 290px;
   max-height: 200px;
-  overflow-y: scroll;
+  overflow-y: auto;
   background: #2c2c36;
   color: white;
   margin-bottom: 10px;
@@ -86,7 +86,7 @@
 .chat-0x4874578 .info-content {
   position: absolute;
   bottom: 0;
-  background: black;
+  background: #222222;
   border-radius: 10px;
   width: 236px;
   padding: 10px;

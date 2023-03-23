@@ -29,6 +29,7 @@
   color: white;
   border-radius: 0;
   border-radius: 5px;
+  box-shadow: 0 0 10px #00000061;
 }
 
 .chat-0x4874578 p {
@@ -43,6 +44,7 @@
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
+  box-shadow: 0 0 10px #00000061;
 }
 
 .chat-0x4874578 p::-webkit-scrollbar-track {
@@ -88,6 +90,7 @@
   border-radius: 10px;
   width: 236px;
   padding: 10px;
+  font-size: 7px;
 }
 
 .hidden {

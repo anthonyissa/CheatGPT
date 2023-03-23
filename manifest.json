@@ -12,5 +12,13 @@
   "action": {
     "default_popup": "./view/popup.html",
     "default_title": "CheatGPT"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "https://*/*"],
+      "js": ["./dist/main.js"],
+      "css": ["./view/background.css"],
+      "persistent": true
+    }
+  ]
 }

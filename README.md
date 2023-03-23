@@ -10,13 +10,15 @@ CheatGPT is an extension that allows you to have a file explorer for your chatGP
 
 <p>
 <img src="https://user-images.githubusercontent.com/77232502/222490893-100388e8-5516-4f35-96cb-58e17eb38414.png"  width="300" height="340">
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp;
 <img src="https://user-images.githubusercontent.com/77232502/222490986-27f54e1b-a578-4baf-be98-8a0e76b59d82.png"  width="300" height="340">
+ &nbsp;
+<img src="https://user-images.githubusercontent.com/77232502/227165466-adeea5e9-83b9-4e62-82ec-c8c6f951c5c5.png"  width="350" height="340">
 </p>
 
 ## How to use CheatGPT
 
-### File explorer
+### 📁 File explorer
 
 Files can be created using the menu on the top. They store the link of a chatGPT conversation. Right click on it to edit the link, delete or rename the file. Double click to open the conversation. 
 
@@ -26,7 +28,7 @@ Change the view style on the top right button to switch from grid to list displa
 
 The left arrow button lets you go back a folder.
 
-### Prompt generator
+### ✍️ Prompt generator
 
 The prompt generator lets you generate prompts to get better answers to your chatGPT requests. Let's take an example.
 Suppose I am trying to write a linkedin post about blockchain. I could simply ask : "Write me a linkedin post about blockchain". But the result might be basic and not that interesting. 
@@ -43,7 +45,32 @@ This will generate
 
 Results will be more interesting, chatGPT even gave me some hashtags at the end ! Use this prompt each time you ask something. Personally it's now necessary before asking any code questions.
 
+### 💬 Injected chat
+
+The goal of this feature is to have a fast and easy access to chatGPT when you need quick informations without the need of going to the chatGPT website.
+This small chatbox lets you interact with chatGPT's API to ask questions and get answers directly on the current UI.
+
+`Ctrl+²` Toggle chat window <br>
+`Ctrl+Enter` Send chatGPT request <br>
+`Ctrl+ArrowUp` Navigate forwards in your history <br>
+`Ctrl+ArrowDown` Nagigate backwards in your history <br>
+
+**NOTE:** This feature needs to have an openAI API key to work.
+
 ## Install and Setup
+
+⚠️ If you want the injected chat feature, do the following steps before the final setup. <br>
+If you don't want this feature, simply skip to the [setup](#setup-locally-on-chrome)
+
+### Install injected chat 
+
+1. Install node on your computer (https://nodejs.org/en/download).
+2. Get an API key for your ChatGPT Account (https://platform.openai.com/account/api-keys).
+3. Make sure you have enough credits left (https://platform.openai.com/account/usage).
+5. Create an `.env` file using the `.env.example` template and include your API key inside.
+6. Launch the `install.bat` to build the app.
+<br>
+Once these steps are done, you can follow the next instructions.
 
 ### Setup locally on Chrome
 

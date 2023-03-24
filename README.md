@@ -74,10 +74,9 @@ Once these steps are done, you can follow the next instructions.
 
 ### Setup locally on Chrome
 
-1. Zip the project.
-2. Head over to `chrome://extensions/` in your URL bar.
-3. Activate `developer mode` on the top right corner
-4. Click on the `Load unpacked` button and import the zip file.
+1. Head over to `chrome://extensions/` in your URL bar.
+2. Activate `developer mode` on the top right corner
+3. Click on the `Load unpacked` button and import the project's folder.
 
 ### Setup locally on Firefox
 

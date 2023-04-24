@@ -67,7 +67,7 @@ If you don't want this feature, simply skip to the [setup](#setup-locally-on-chr
 1. Install node on your computer (https://nodejs.org/en/download).
 2. Get an API key for your ChatGPT Account (https://platform.openai.com/account/api-keys).
 3. Make sure you have enough credits left (https://platform.openai.com/account/usage).
-4. Download the project and unzip it.
+4. [Download](https://github.com/anthonyissa/CheatGPT/archive/refs/heads/main.zip) the project and unzip it.
 5. Create an `.env` file in the project's folder using the `.env.example` template and include your API key inside.
 6. Launch the `install.bat` to build the app.
 <br>

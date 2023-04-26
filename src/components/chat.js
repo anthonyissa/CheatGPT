@@ -3,6 +3,7 @@ import { createInfoElement } from "./info";
 import { createInputElement } from "./input";
 import { createLoadingElement } from "./loading";
 import { createResponseElement } from "./response";
+import { createSettingsElement } from "./settings";
 
 let responseHistory = [];
 let promptHistory = [];
@@ -20,11 +21,13 @@ export const initChat = () => {
   const input = createInputElement();
   const loading = createLoadingElement();
   const info = createInfoElement();
-  
+  const settings = createSettingsElement();
+
   div.appendChild(loading);
   div.appendChild(response);
   div.appendChild(input);
   div.appendChild(info);
+  div.appendChild(settings);
   
   document.body.appendChild(div);
   

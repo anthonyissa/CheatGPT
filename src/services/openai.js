@@ -1,5 +1,7 @@
 import { addToHistories } from "../components/chat";
 import { toggleLoading } from "../components/loading";
+import { isCodeOnly } from "../components/settings";
+import { codeOnlyPrompt } from "../utils";
 
 let isLoading = false;
 
@@ -11,7 +13,7 @@ export const callOpenAi = async (prompt) => {
     toggleLoading(true);
     responseElement.classList.add("hidden");
     
-    const response = await sendOpenAiRequest(prompt);
+    const response = await sendOpenAiRequest(completePrompt(prompt));
 
     responseElement.innerHTML = response;
     responseElement.style.color = "white";
@@ -72,3 +74,8 @@ const sendOpenAiRequest = async (prompt) => {
   const jsonResults = JSON.parse(textResults); 
   return jsonResults.choices[0].message.content.replace(/\n/g, '<br>').replace("  ", "&emsp;"); 
 } 
+
+const completePrompt = (prompt) => {
+  if(isCodeOnly()) prompt = codeOnlyPrompt + prompt;
+  return prompt;
+};

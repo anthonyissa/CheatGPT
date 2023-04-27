@@ -78,7 +78,7 @@
 .chat-0x4874578 .info {
   position: absolute;
   width: 20px;
-  bottom: 10px;
+  bottom: 6px;
   right: 13px;
   z-index: 99;
 }
@@ -95,4 +95,19 @@
 
 .hidden {
   display: none;
+}
+
+.settings-0x4874578 {
+  margin-top: 15px;
+  padding: 0 10px;
+  display: flex;
+}
+
+#checkbox-code-only {
+  accent-color: #42bb9b;
+}
+
+#label-code-only {
+  color: #bcbcbc;
+  margin-left: 10px;
 }

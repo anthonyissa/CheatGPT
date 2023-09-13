@@ -2,6 +2,10 @@
 
 CheatGPT is an extension that allows you to have a file explorer for your chatGPT discussions. You can save, store and order your conversations but you can also generate complete prompts for when you need to ask questions to chatGPT. More details below. 
 
+## ⚠️ Disclaimer
+
+This program has been created for educational and practical purposes only. While it may possess capabilities that could potentially be used for activities that go against the principles of fair play and ethics, the intent behind its development is purely to facilitate learning and enhance productivity. I strongly discourage any misuse of this software for unethical or illegal activities. Users are responsible for adhering to their respective institutions' policies and guidelines when utilizing this program and should exercise discretion and integrity in all applications. The developer shall not be held liable for any misuse or consequences resulting from the program's use in violation of ethical standards or applicable laws.
+
 [Preview](#preview)<br>
 [How to use CheatGPT](#how-to-use-cheatgpt)<br>
 [Install and Setup](#install-and-setup)

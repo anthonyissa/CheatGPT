@@ -34,9 +34,10 @@ const waitBeforeNextCall = () => {
 };
 
 const sendOpenAiRequest = async (prompt) => {
+  const ENTER_KEY_HERE = "";
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  myHeaders.append("x-api-key", process.env.KEY);
+  myHeaders.append("x-api-key", ENTER_KEY_HERE);
 
   var requestOptions = {
     method: "POST",
@@ -45,12 +46,15 @@ const sendOpenAiRequest = async (prompt) => {
     redirect: "follow",
   };
 
-  const rawResults = await fetch(process.env.URL, requestOptions);
+  const rawResults = await fetch(
+    "https://cheatgpt-api-production.up.railway.app/ask",
+    requestOptions
+  );
 
   if (!rawResults.ok) {
     console.error(rawResults);
     if (rawResults.status === 401) {
-      throw new Error("Make sure the API key is correct.");
+      throw new Error("Make sure you have the right API key in main.js");
     } else if (rawResults.status === 429) {
       throw new Error(
         "You have reached the maximum number of requests per hour."

@@ -28,9 +28,9 @@ export const initChat = () => {
   div.appendChild(input);
   div.appendChild(info);
   div.appendChild(settings);
-  
+
   document.body.appendChild(div);
-  
+
   listenToKeyEvents(input);
   return div;
 };
@@ -39,30 +39,32 @@ export const addToHistories = (response, prompt) => {
   responseHistory.push(response);
   promptHistory.push(prompt);
   historyCursor++;
-}
+};
 
 export const navigateHistory = (event) => {
   const input = document.querySelector(".chat-0x4874578 textarea");
   const response = document.querySelector(".chat-0x4874578 #response");
   if (event.ctrlKey && event.key === "ArrowUp") {
-    if(historyCursor === promptHistory.length) return;
+    if (historyCursor === promptHistory.length) return;
     historyCursor++;
-  }
-  else if (event.ctrlKey && event.key === "ArrowDown") {
-    if(historyCursor === 1) return;
+  } else if (event.ctrlKey && event.key === "ArrowDown") {
+    if (historyCursor === 1) return;
     historyCursor--;
   }
-  input.value = promptHistory[historyCursor-1];
-  response.innerHTML = responseHistory[historyCursor-1];
-}
+  input.value = promptHistory[historyCursor - 1];
+  response.innerHTML = responseHistory[historyCursor - 1];
+};
 
 const listenToKeyEvents = (input) => {
   input.addEventListener("keydown", async function (event) {
     if (event.ctrlKey && event.key === "Enter") {
       await callOpenAi(input.value);
     }
-    if (event.ctrlKey && (event.key === "ArrowUp" || event.key === "ArrowDown")) {
+    if (
+      event.ctrlKey &&
+      (event.key === "ArrowUp" || event.key === "ArrowDown")
+    ) {
       navigateHistory(event);
     }
   });
-}
+};

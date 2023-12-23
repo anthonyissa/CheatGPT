@@ -1,5 +1,6 @@
 import { addToHistories } from "../components/chat";
 import { toggleLoading } from "../components/loading";
+import { selectedModel } from "../components/model";
 import { isCodeOnly } from "../components/settings";
 import { codeOnlyPrompt } from "../utils";
 
@@ -41,7 +42,7 @@ const sendOpenAiRequest = async (prompt) => {
   myHeaders.append("Authorization", "Bearer " + process.env.KEY);
 
   var raw = JSON.stringify({
-    model: "gpt-4",
+    model: selectedModel,
     messages: [
       {
         role: "user",
